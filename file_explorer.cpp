@@ -213,19 +213,21 @@ void change_permissions(const fs::path &p, const std::string &modeStr) {
 
 // ------------------- Interactive UI -------------------
 void print_menu() {
-    std::cout << "==== 🗂️ File Explorer Menu ====\n";
-    std::cout << std::left; // align left
-    std::cout << std::setw(4) << "1️⃣" << " Show Current Path (pwd)\n";
-    std::cout << std::setw(4) << "2️⃣" << " List Files (ls)\n";
-    std::cout << std::setw(4) << "3️⃣" << " Change Directory (cd)\n";
-    std::cout << std::setw(4) << "4️⃣" << " Create New File (touch)\n";
-    std::cout << std::setw(4) << "5️⃣" << " Delete File (rm)\n";
-    std::cout << std::setw(4) << "6️⃣" << " Rename / Move File (mv)\n";
-    std::cout << std::setw(4) << "7️⃣" << " Search File\n";
-    std::cout << std::setw(4) << "8️⃣" << " Show File Permissions (perms)\n";
-    std::cout << std::setw(4) << "9️⃣" << " Change File Permissions (chmod)\n";
-    std::cout << std::setw(4) << "🔟" << " Exit\n"; // 10th option using 🔟 emoji
-    std::cout << "\n👉 Enter your choice: ";
+    std::cout << "\n====📂 File Explorer Menu ====\n"
+              << "1. pwd (show current directory)\n"
+              << "2. ls (list current directory)\n"
+              << "3. cd <path> (change directory)\n"
+              << "4. cat <file> (show file contents)\n"
+              << "5. copy <src> <dst>\n"
+              << "6. move <src> <dst>\n"
+              << "7. delete <path>\n"
+              << "8. touch <file>\n"
+              << "9. mkdir <dir>\n"
+              << "10. search <root> <pattern>\n"
+              << "11. perms <path> (show permissions)\n"
+              << "12. chmod <path> <octal> (e.g., 755)\n"
+              << "0. exit\n"
+              << "Enter command:\n";
 }
 
 void cat_file(const fs::path &p) { std::error_code ec;
